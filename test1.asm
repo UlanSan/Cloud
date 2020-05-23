@@ -41,10 +41,10 @@ jmp TWI
 jmp SPM_RDY
 
 mes1:
-.db 'P','I','N','G','\r','\n'
+.db 'ping','\r','\n'
 
 mes2:
-.db 'P','O','N','G','\r','\n'
+.db 'pong','\r','\n'
 
 reset:
 	ldi r16, high(ramend)
@@ -120,19 +120,19 @@ VixUT:
 	reti
 
 TIM0_OVF:
-	ldi ZH,High(mes1*2) ; 1ый
-    ldi ZL,Low(mes1*2) ; 2ой
-	lpm ; 3ий
-	sts UDR0, r0 ; 4ый
+	ldi ZH,High(mes1*2) ; 1Г»Г©
+    ldi ZL,Low(mes1*2) ; 2Г®Г©
+	lpm ; 3ГЁГ©
+	sts UDR0, r0 ; 4Г»Г©
 	ldi r20, 0
 	ldi r16, TIM_0_DELAY_REG
 	sts TCNT0, r16
 	reti
 TIM2_OVF:
-	ldi ZH,High(mes2*2) ; 1ый
-    ldi ZL,Low(mes2*2) ; 2ой
-	lpm ; 3ий
-	sts UDR0, r0 ; 4ый
+	ldi ZH,High(mes2*2) ; 1Г»Г©
+    ldi ZL,Low(mes2*2) ; 2Г®Г©
+	lpm ; 3ГЁГ©
+	sts UDR0, r0 ; 4Г»Г©
 	ldi r20, 0
 	ldi r16, TIM_2_DELAY_REG
 	sts TCNT2, r16
