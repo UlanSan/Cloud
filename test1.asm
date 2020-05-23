@@ -41,10 +41,10 @@ jmp TWI
 jmp SPM_RDY
 
 mes1:
-.db 'ping','\r','\n'
+.db 'P','I','N','G','\r','\n'
 
 mes2:
-.db 'pong','\r','\n'
+.db 'P','O','N','G','\r','\n'
 
 reset:
 	ldi r16, high(ramend)
